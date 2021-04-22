@@ -624,12 +624,12 @@
         let downListener = () => {
             addClass(zoomer, 'is-dragging');
         }
-        element.addEventListener('mousedown', downListener)
+        zoomer.addEventListener('mousedown', downListener);
           
         let upListener = () => {
             removeClass(zoomer, 'is-dragging');
         }
-        element.addEventListener('mouseup', upListener)
+        zoomer.addEventListener('mouseup', upListener);
 
         self.element.appendChild(wrap);
         wrap.appendChild(zoomer);
