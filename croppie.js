@@ -963,7 +963,9 @@
 
         function mouseUp() {
             isDragging = false;
-            toggleGrabState(isDragging);
+            setTimeout(function(){
+                toggleGrabState(isDragging);
+            },20);
             window.removeEventListener('mousemove', mouseMove);
             window.removeEventListener('touchmove', mouseMove);
             window.removeEventListener('mouseup', mouseUp);
