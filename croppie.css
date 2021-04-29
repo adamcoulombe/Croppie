@@ -17,7 +17,7 @@
 .croppie-container .cr-image-unloaded {
     position: absolute;
     top: 0;
-    left: -9999;
+    left: -9999px;
 }
 
 .croppie-container .cr-boundary {
