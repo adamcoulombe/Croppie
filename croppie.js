@@ -377,7 +377,11 @@
         else {
             self.elements.preview = img;
         }
-
+        
+        addClass(self.elements.img, 'cr-image-unloaded');
+        img.addEventListener("load",function(){
+            removeClass(self.elements.img, 'cr-image-unloaded');
+        });
         addClass(boundary, 'cr-boundary');
         boundary.setAttribute('aria-dropeffect', 'none');
         bw = self.options.boundary.width;
