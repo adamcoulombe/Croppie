@@ -1366,6 +1366,11 @@
             if (self.options.useCanvas) {
                 _transferImageToCanvas.call(self, self.data.orientation);
             }
+            if(self.options.onCroppieReady){
+                if(typeof self.options.onCroppieReady==='function'){
+                    self.options.onCroppieReady();
+                }
+            }
             _updatePropertiesFromImage.call(self);
             _triggerUpdate.call(self);
             cb && cb();
