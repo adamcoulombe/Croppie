@@ -379,9 +379,7 @@
         }
 
         addClass(self.elements.img, 'cr-image-unloaded');
-        self.elements.img.addEventListener("load",function(){
-            removeClass(self.elements.img, 'cr-image-unloaded');
-        });
+  
         addClass(boundary, 'cr-boundary');
         boundary.setAttribute('aria-dropeffect', 'none');
         bw = self.options.boundary.width;
@@ -407,6 +405,9 @@
 
         self.element.appendChild(boundary);
         boundary.appendChild(self.elements.preview);
+        self.elements.preview.addEventListener("load",function(){
+            removeClass(self.elements.img, 'cr-image-unloaded');
+        });
         boundary.appendChild(viewport);
         boundary.appendChild(overlay);
 
