@@ -183,7 +183,7 @@
         return new Promise(function (resolve, reject) {
             function _resolve() {
                 img.style.opacity = '1';
-                setTimeout(function () {
+                setTimeout(function () {                    
                     resolve(img);
                 }, 1);
             }
@@ -405,9 +405,6 @@
 
         self.element.appendChild(boundary);
         boundary.appendChild(self.elements.preview);
-        self.elements.preview.addEventListener("load",function(){
-            removeClass(self.elements.img, 'cr-image-unloaded');
-        });
         boundary.appendChild(viewport);
         boundary.appendChild(overlay);
 
@@ -1297,6 +1294,7 @@
             this.elements.preview = img; // if the img is attached to the DOM, they're not using the canvas
         }
         this.elements.img = img;
+        this.elements.img.classList.remove('cr-image-unloaded');
     }
 
     function _bind(options, cb) {
